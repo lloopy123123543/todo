@@ -1,5 +1,5 @@
 {
-  "name": "todo_vite",
+  "name": "todo-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1",
     "vite": "^4.3.0"
   }
 }
