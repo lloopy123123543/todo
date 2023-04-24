@@ -47,6 +47,7 @@ class NoteController extends BaseController
             }else{return response()->json("user not found");}
         }else{return response()->json("token is empty");}
     }
+
     public function show_notes(Request $request){
         $bearer = $request->header("authorization");
         $token = explode(" ", $bearer)[1];
