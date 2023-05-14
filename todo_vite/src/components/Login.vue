@@ -1,23 +1,50 @@
-<script setup>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      login: "",
+      password: ""
+    }
+
+  },
+  methods: {
+    flert: function () {
+      alert(this.login + this.password)
+    }
+
+  },
+  mounted() {
+
+  },
+
+
+}
+
 
 </script>
 
 <template>
-  <div class="w-full h-max flex items-center justify-center">
-    <div class="flex items-center justify-center w-1/2 bg-white h-screen">
-      <div class="flex flex-col gap-4 w-5/6 h-96 p-70 border-2 shadow-slate-800 bg-blue-100">
-        <div class="text-5xl text-center">ToDo</div>
-        <div class="">Login</div>
-        <input type="text" placeholder="Login" class="w-96">
-        <div class="">Password</div>
-        <input type="text" placeholder="Password" class="w-96">
-        <div class="">ToDo</div>
-      </div>
+  <div class="py-32">
+    <div class="container bg-white grid grid-cols-1 mt-10 sm:rounded-lg max-w-2xl space-y-10 p-10">
+    <h1 class="text-center font-bold text-2xl">LOGIN</h1>
+    <div>
+      <label for="Login" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login</label>
+      <input v-model="login" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Login" required>
     </div>
+    <div>
+      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+      <input v-model="password" type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Password" required>
+    </div>
+    <button v-on:click="flert" type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</button>
 
   </div>
-
+  </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
