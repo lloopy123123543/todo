@@ -6,6 +6,7 @@ import App from './App.vue'
 import Nav from './components/Nav.vue'
 import Todos from './components/Todos.vue'
 
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -31,3 +32,4 @@ const router = createRouter({
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
+export default router;
