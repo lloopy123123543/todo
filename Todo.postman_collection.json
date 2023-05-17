@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "c51bb97a-55e1-438a-999c-207b9e8bfc1f",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "72f59702f9f1a1594a27ce013f233d45",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/user/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/note/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"note",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show notes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "cc44c217753d0c337e5ec82c38af3a77",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/note/show/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"note",
+						"show",
+						"notes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
