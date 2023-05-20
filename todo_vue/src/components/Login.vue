@@ -1,24 +1,16 @@
-<script>
-import axios from "axios";
-import router from "../router"
-
-export default {
-  data() {
-    return {
-      login: "",
-      password: ""
-    }
-
-  },
-  methods: {
-    enter () {
-      localStorage.setItem("token", null)
-      axios({
+<script setup>
+import router from '../router'
+import axios from 'axios'
+import {ref} from 'vue'
+let login = ref('');
+let password = ref('');
+function enter(){
+  axios({
         method: 'post',
         url: 'http://localhost:8000/api/user/login',
         data: {
-          login: this.login,
-          password: this.password
+          login: login.value,
+          password: password.value
         }
       })
       .then(res => {
@@ -28,27 +20,13 @@ export default {
 
 
       })
-      .catch(error => alert("Что-то пошло не так, проверьте правильность логина и пароля"));
-   
-
-      
-
-    }
-
-  },
-  mounted() {
-
-  },
-
-
+  router.push("/todos")
 }
-
-
 </script>
 
 <template>
   <div class="py-32">
-    <div class="container bg-white grid grid-cols-1 mt-10 sm:rounded-lg max-w-2xl space-y-10 p-10">
+    <div class="container mx-auto bg-white grid grid-cols-1 mt-10 sm:rounded-lg max-w-2xl space-y-10 p-10">
     <h1 class="text-center font-bold text-2xl">LOGIN</h1>
     <div>
       <label for="Login" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Login</label>
@@ -69,4 +47,5 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

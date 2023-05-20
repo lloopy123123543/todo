@@ -55,9 +55,25 @@ class NoteController extends BaseController
         if ($bearer != ''){
             if($user != null){
                 $notes = Note::all() -> where("user_id", $user -> id);
-                return response() -> json(["data" => [
-                    "notes" => $notes
-                ]]);
+                return response() -> json(["data" => $notes
+                ]);
+
+            }else{return response() -> json("User not found");}
+
+        }else{return response() -> json("token is empty");}
+
+    }
+    public function delete_note(Request $request, $id){
+        $bearer = $request->header("authorization");
+        $token = explode(" ", $bearer)[1];
+        $user = User::all()->where("remember_token", $token)->first();
+        if ($bearer != ''){
+            if($user != null){
+                $notes = Note::find($id);
+                $notes-> delete();
+
+                return response() -> json(["deleted"
+                ]);
 
             }else{return response() -> json("User not found");}
 

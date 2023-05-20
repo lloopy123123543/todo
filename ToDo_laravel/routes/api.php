@@ -27,5 +27,6 @@ Route::prefix("user") -> group( function () {
 });
 Route::prefix("note") -> group( function () {
     Route::post("create", [NoteController::class, "create_note"]);
-    Route::post("show/notes", [NoteController::class, "show_notes"]);
+    Route::get("show/notes", [NoteController::class, "show_notes"]);
+    Route::delete("delete/note/{id}", [NoteController::class, "delete_note"]);
 });

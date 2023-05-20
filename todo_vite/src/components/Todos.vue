@@ -1,31 +1,31 @@
-<script>
-// import axios from "axios";
-// export default {
-//   data() {
-//     return {
-//       login: "",
-//       password: ""
-//     }
+<script setup>
+function enter(){
+  axios({
+        method: 'get',
+        url: 'http://localhost:8000/api/note/show/notes',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        },
+      })
+      .then(res => {
+    console.log (res.data.data)
 
-//   },
-//   methods: {
-//     flert: function () {
-//       alert(this.login + this.password)
-//     }
-
-//   },
-//   mounted() {
-
-//   },
-
-
-// }
+  })
+  .catch(error => alert("Что то не так"));
+}
+enter()
 
 
 </script>
 
 <template>
-  <div>hello</div>
+  <div class="container">
+    <div class="">
+      <div></div>
+    </div>
+
+  </div>
 </template>
 
 <style scoped></style>
