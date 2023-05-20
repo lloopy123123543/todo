@@ -15,10 +15,7 @@
             <a href="#" class="mr-4 hover:underline md:mr-6 "><router-link to="/">Главная</router-link></a>
           </li>
           <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6"><router-link to="/login">Войти</router-link></a>
-          </li>
-          <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6"><router-link to="/registration">Регистрация</router-link></a>
+            <a href="#" class="mr-4 hover:underline md:mr-6"><router-link to="/registration">Войти</router-link></a>
           </li>
         </ul>
       </div>

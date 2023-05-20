@@ -1,4 +1,5 @@
 <script setup>
+import CreateTodos from "./CreateTodos.vue";
 import axios from "axios"
 import { ref } from "vue"
 const notes = ref()
@@ -39,17 +40,22 @@ enter()
 </script>
 
 <template>
-    <div class="container  w-full mx-auto p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-5">
-        <div v-for="note in notes" :key="note.id" class="w-3/4 bg-amber-100">
-            <div class="bg-amber-200 p-2">
-                <div class="text-2xl text-amber-500 flex justify-between">{{ note.title }} <button v-on:click="delete_card(note.id); enter()" class="text-xl">Готово</button></div>
-            </div>
-            <div class="p-2 text-amber-500">{{ note.text }}</div>
+    <div>
+        <create-todos @vizov="enter()"></create-todos>
+        <div class="container  w-full mx-auto p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 
-
-        </div>
-
+<div v-for="note in notes" :key="note.id" class=" bg-amber-100 m-5">
+    <div class="bg-amber-200 p-2 ">
+        <div class="text-2xl text-amber-500 flex justify-between">{{ note.title }} <button v-on:click="delete_card(note.id); enter()" class="text-xl">Готово</button></div>
     </div>
+    <div class="p-2 text-amber-500">{{ note.text }}</div>
+
+
+</div>
+
+</div>
+    </div>
+
 </template>
 
 <style scoped></style>

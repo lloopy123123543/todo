@@ -35,12 +35,17 @@ class UserController extends BaseController
             $login = User::all()->where("login", $request->input("login"));
             if ($login != null) {
                 $add = new User();
+                $token = bin2hex(openssl_random_pseudo_bytes(16));
                 $add->login = $request->input("login");
                 $add->password = $request->input("password");
                 $add->name = $request->input("name");
                 $add->surname = $request->input("surname");
+                $add->remember_token = $token;
+
                 $add->save();
-                return response()->json(["data" => ["status" => "profile was created"]]);
+                return response()->json(["data" => [
+                    "token" => $token
+                ]]);
             } else {
                 return response()->json(["error" => ["errors" => "login alrady exist"]]);
             }

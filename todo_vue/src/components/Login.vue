@@ -17,10 +17,11 @@ function enter(){
         const token = res.data.data.token;
         localStorage.setItem('token', token);
         console.log(token)
+        router.push("/todos")
 
 
       })
-  router.push("/todos")
+
 }
 </script>
 
