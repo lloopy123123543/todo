@@ -23,8 +23,6 @@ function register(){
         const token = res.data.data.token;
         localStorage.setItem('token', token);
           router.push("/todos")
-
-
       })
 
 }
@@ -42,9 +40,8 @@ function enter(){
         localStorage.setItem('token', token);
         console.log(token)
         router.push("/todos")
-
-
       })
+      .catch(err => {console.log(err)})
 
 }
 </script>

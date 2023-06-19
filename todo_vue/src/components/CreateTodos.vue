@@ -4,6 +4,9 @@ import { ref } from "vue"
 const TITLE = ref('')
 const TEXT = ref('')
 function create() {
+    if(TITLE == "" || TEXT == "" ){
+        alert("Поле логина или пароля пустые")
+    }
     axios({
         method: 'post',
         url: 'http://localhost:8000/api/note/create',
@@ -17,12 +20,12 @@ function create() {
         },
     })
         .then(res => {
-            notes.value = res.data.data
+
             console.log(res.data.data)
 
 
         })
-        .catch(error => (error.message));
+        .catch(error => (alert("поля логина и пароля пустые")));
 }
 
 

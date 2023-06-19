@@ -35,6 +35,26 @@ function delete_card(id) {
         })
         .catch(error => alert("Что то не так"));
 }
+function takeDate(date){
+    let word = []
+    for (let i = 0; i < 10; i++) {
+        if(date[i] == "-"){
+            word.push(".")
+            i++
+        }
+        word.push(date[i])
+
+        
+    }
+    word = word.join('')
+    word = word.split(".");
+    const sec = word[0];
+    word[0] = word[2]
+    word[2] = sec;
+    word = word.join('.')
+
+    return word;
+}
 enter()
 
 </script>
@@ -46,9 +66,10 @@ enter()
 
 <div v-for="note in notes" :key="note.id" class=" bg-amber-100 m-5">
     <div class="bg-amber-200 p-2 ">
-        <div class="text-2xl text-amber-500 flex justify-between">{{ note.title }} <button v-on:click="delete_card(note.id); enter()" class="text-xl">Готово</button></div>
+        <div class="text-2xl text-amber-500 flex justify-between">{{ note.title }} <button v-on:click="delete_card(note.id); enter()" class="text-xl"><img src="../assets/icons8-delete.svg" alt="" srcset=""></button></div>
     </div>
     <div class="p-2 text-amber-500">{{ note.text }}</div>
+    <div class="text-sm text-amber-500 flex justify-end px-1">{{takeDate(note.created_at) }}</div>
 
 
 </div>
